@@ -16,7 +16,11 @@
 
 	<!-- provider -->
 	<authentication-manager>
-
+     <authentication-provider> 
+       <user-service> 
+         <user name="manager" password="{noop}manager" authorities="ROLE_MEMBER" /> 
+       </user-service> 
+     </authentication-provider> 
 	</authentication-manager>
 
 </beans:beans>
