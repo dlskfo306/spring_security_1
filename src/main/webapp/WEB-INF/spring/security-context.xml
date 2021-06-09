@@ -11,7 +11,18 @@
 		<intercept-url pattern="/security/member" access="hasRole('ROLE_MEMBER')" />
 		<intercept-url pattern="/security/admin" access="hasRole('ROLE_ADMIN')" />
 		<form-login />
-		
+
+
+		<!-- 이건 디폴트! 기본 로그인 페이지 그래서 이걸 자기걸로 커스터마이징 하겠다는 것! -->
+		<!-- 로그인 페이지 커스텀 화 -->
+		<!-- <form-login/> -->
+		<form-login login-page="/login/loginForm"
+		default-target-url="/"
+		authentication-failure-url="/login/loginForm?error" 
+		username-parameter="id" password-parameter="password" />
+
+        <logout logout-url="/logout" logout-success-url="/" /> 
+        
 		<!-- 403 에러 처리 -->
         <access-denied-handler error-page="/security/accessError"/>
 		
