@@ -45,5 +45,21 @@ public class HomeController {
         log.info("Welcome Login Form");
         return "login/loginForm2";
     }
-
+    
+    
+    //develop_security_step_7_db_custom
+    @GetMapping("/user/userHome")
+    public void userHome() {
+        log.info("userHome");
+    }
+    
+    @GetMapping("/admin/adminHome")
+    public void adminHome() {
+        log.info("adminHome");
+    }
+    
+    @GetMapping("/login/accessDenied")
+    public void accessDenied() {
+        log.info("Access is Denied");
+    }
 }

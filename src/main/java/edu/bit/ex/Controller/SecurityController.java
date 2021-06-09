@@ -1,4 +1,4 @@
-package edu.bit.ex;
+package edu.bit.ex.Controller;
 
 import java.security.Principal;
 import java.text.DateFormat;
