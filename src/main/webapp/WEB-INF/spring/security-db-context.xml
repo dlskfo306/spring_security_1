@@ -36,11 +36,27 @@
      <authentication-provider>
 		<password-encoder ref="customNoOpPasswordEncoder" /> 
 		<!-- customNoOpPasswordEncoder는 암호화된 비번 그대로 bcryptPasswordEncoder는 암호화된 비번 복호화해서 -->
-		<jdbc-user-service data-source-ref="dataSource"
-			role-prefix=""
-			users-by-username-query="select ename, empno, 1 from emp where ename = ?"
-			authorities-by-username-query="select ename, job from emp where ename = ?" />
+		<jdbc-user-service 
+               data-source-ref="dataSource"
+               role-prefix=""
+               users-by-username-query="select ename, empno, 1 from emp where ename = ?"
+               authorities-by-username-query="select ename, case when job='MANAGER' then 'ROLE_ADMIN' else 'ROLE_USER' end from emp where ename = ?"
+           />
      </authentication-provider> 
 	</authentication-manager>
+	
+	
+	
+ 	<!-- provider -->
+	<!--	<authentication-manager>
+     <authentication-provider>
+		<password-encoder ref="bcryptPasswordEncoder" /> 
+		customNoOpPasswordEncoder는 암호화된 비번 그대로 bcryptPasswordEncoder는 암호화된 비번 복호화해서
+		<jdbc-user-service data-source-ref="dataSource"
+			role-prefix=""
+			users-by-username-query="select username, password, enabled from users where username = ?"
+			authorities-by-username-query="select username, authority from authorities where username = ?" />
+     </authentication-provider> 
+	</authentication-manager> -->
 
 </beans:beans>
