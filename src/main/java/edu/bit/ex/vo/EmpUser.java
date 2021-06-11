@@ -42,7 +42,7 @@ public class EmpUser extends User {
 
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		
-			authorities.add(new SimpleGrantedAuthority(empVO.getAuthority()));
+			authorities.add(new SimpleGrantedAuthority(empVO.authority()));
 		
 		return authorities;
 	}

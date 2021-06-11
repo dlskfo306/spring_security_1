@@ -4,21 +4,20 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.bit.ex.mapper.EmpMapper">
-
-	<resultMap id="empMap" type="edu.bit.ex.vo.EmpVO">
-	    <result property="username" column="ename"/>
-	    <result property="password" column="empno"/>
+<!-- 	<resultMap id="empMap" type="edu.bit.ex.vo.EmpVO">
+	    <result property="ename" column="ename"/>
+	    <result property="empno" column="empno"/>
+	    <result property="enabled" column="enabled"/>
 		<collection property="authList" resultMap="authMap"></collection>
 	</resultMap>
 	
-<!-- 	<resultMap id="authMap" type="edu.bit.ex.vo.AuthVO">
+	<resultMap id="authMap" type="edu.bit.ex.vo.AuthVO">
 		<result property="username" column="username"/>
 		<result property="authority" column="authority"/>
 	</resultMap> -->
 	
-	<select id="getEmp" resultMap="empMap">
-		select * from emp 
-		where ename = #{ename}
+	<select id="getEmp" resultType="edu.bit.ex.vo.EmpVO">
+		select * from emp where ename = #{ename}
 	</select>
 	
 

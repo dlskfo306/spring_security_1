@@ -1,7 +1,7 @@
 package edu.bit.ex.vo;
 
 import java.sql.Timestamp;
-import java.util.List; 
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +29,7 @@ DEPTNO            NUMBER(2)
 @NoArgsConstructor
 @ToString
 public class EmpVO {
-  
+
     private String empno;
     private String ename;
     private String job;
@@ -37,8 +37,13 @@ public class EmpVO {
     private int sal;
     private int comm;
     private int deptno;
-    String authority;
-    
-    private List<AuthVO> authList;
-    //MemberVO (1) : AuthList (N) 관계
+    /* String authority; */
+
+
+    // DB에 있는 것을 객체로 가져옴
+    public String authority() {
+
+        return "ROLE_ADMIN";
+    }
+
 }
