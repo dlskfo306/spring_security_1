@@ -27,19 +27,19 @@ import lombok.extern.log4j.Log4j;
 @Service
 public class EmpDetailsService implements UserDetailsService {
 
-	@Setter(onMethod_ = @Autowired)
-	private EmpMapper empMapper;
+    @Setter(onMethod_ = @Autowired)
+    private EmpMapper empMapper;
 
-	@Override
-	public UserDetails loadUserByUsername(String ename) throws UsernameNotFoundException {
-		log.warn("Load User By EmpVO number: " + ename);
-		
-		//MemberVO에서 username객체를 가져온다.
-		EmpVO vo = empMapper.getEmp(ename);
+    @Override
+    public UserDetails loadUserByUsername(String ename) throws UsernameNotFoundException {
+        log.warn("Load User By EmpVO number: " + ename);
+        
+        //MemberVO에서 username객체를 가져온다.
+        EmpVO vo = empMapper.getEmp(ename);
 
-		log.warn("queried by EmpVO mapper: " + vo);
+        log.warn("queried by EmpVO mapper: " + vo);
 
-		return vo == null ? null : new EmpUser(vo);
+        return vo == null ? null : new EmpUser(vo);
 
-	}
+    }
 }

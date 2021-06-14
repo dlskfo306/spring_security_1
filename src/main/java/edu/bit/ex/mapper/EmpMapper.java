@@ -11,6 +11,7 @@ import edu.bit.ex.vo.UserVO;
 @Mapper
 public interface EmpMapper {
     
+        //.xml 대신 여기다 붙여쓰기
     @Select("select * from emp where ename = #{ename}")
     public EmpVO getEmp(String ename);
     //ename = ID
