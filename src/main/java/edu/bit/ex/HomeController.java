@@ -49,7 +49,7 @@ public class HomeController {
     @GetMapping("/login/loginForm")
     public String loginForm() {
         log.info("Welcome Login Form");
-        return "login/loginForm2";
+        return "login/loginForm";
     }
     
     
