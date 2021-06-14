@@ -41,16 +41,9 @@ public class EmpVO {
 
 
     // DB에 있는 것을 객체로 가져옴
-    /*
-     * public String authority() {
-     * 
-     * return "ROLE_ADMIN"; }
-     */
-    
-    public String getAuthority() {
-        if(getJob().toUpperCase().contains("MANAGER"))
-            return "ROLE_ADMIN";
-         else
-            return "ROLE_USER";
+    public String authority() {
+
+        return "ROLE_ADMIN";
     }
+
 }
