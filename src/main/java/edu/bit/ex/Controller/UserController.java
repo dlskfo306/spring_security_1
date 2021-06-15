@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.bit.ex.service.UserService;
 import edu.bit.ex.vo.UserVO;
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
+@AllArgsConstructor
 @Controller
 public class UserController {
     
