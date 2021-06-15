@@ -15,6 +15,10 @@
       </div>
       <c:url value="/login" var="loginUrl" />
       <div class="container col-md-4">
+      
+      <%-- form:form 이 어디서 나오는 거냐면
+      <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+      에서 나오는 것. --%>
 	      <form:form name ="f" class="px-4 py-3" action="${loginUrl}" method="post">
 	            <c:if test="${param.error != null}">
         			<p>아이디와 비밀번호가 잘못되었습니다.</p>
