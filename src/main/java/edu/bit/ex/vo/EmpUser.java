@@ -20,7 +20,8 @@ import lombok.ToString;
 @ToString
 public class EmpUser extends User {
 
-	private EmpVO emp;
+	private EmpVO emp; //userHome.jsp에서 
+	//principal.emp 의 emp임
 	   
 	   //기본적으로 부모의 생성자를 호출해야만 정상적으로 작동
 	
@@ -29,6 +30,7 @@ public class EmpUser extends User {
 	    super(username, password, authorities);
 	}
 
+	//생성자
 	public EmpUser(EmpVO empVO) {
 
 	    //super의 밑에 3개는 무조건 필수!
@@ -38,11 +40,13 @@ public class EmpUser extends User {
 	}
 
 	// 유저가 갖고 있는 권한 목록
+	// 생성자에서 함수를 불러오려면 static을 불러와야한다.
+	// 왜??(알아야함 static)
 	public static Collection<? extends GrantedAuthority> getAuth(EmpVO empVO) {
 
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		
-			authorities.add(new SimpleGrantedAuthority(empVO.authority()));
+			authorities.add(new SimpleGrantedAuthority(empVO.getAuthority()));
 		
 		return authorities;
 	}
