@@ -34,4 +34,18 @@
 	<tx:annotation-driven
 		transaction-manager="transactionManager" proxy-target-class="true" />
 
+	<!-- 인터셉터 객체 생성 -->
+	<beans:bean id="boardInterceptor"
+		class="edu.bit.ex.interceptor.BoardInterceptor">
+	</beans:bean>
+	
+	<!-- Interceptor 설정 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/board/**" />
+			<!-- <exclude-mapping path="/resources/**"/> -->
+			<beans:ref bean="boardInterceptor" />
+		</interceptor>
+	</interceptors>
+
 </beans:beans>

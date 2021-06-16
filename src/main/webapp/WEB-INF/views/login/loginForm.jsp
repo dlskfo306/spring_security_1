@@ -23,7 +23,7 @@
     </c:if>
     <p>
         <label for="username">아이디</label>
-        <input type="text" id="id" name="id" />
+        <input type="text" id="id" name="username" />
     </p>
     <p>
         <label for="password">비밀번호</label>
